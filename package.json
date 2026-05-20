@@ -1,0 +1,17 @@
+{
+  "name": "openxpki-slides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@iconify-json/mdi": "^1.2.3",
+    "@slidev/cli": "^52.15.2",
+    "slidev-theme-neversink": "^0.4.1"
+  }
+}
