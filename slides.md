@@ -78,6 +78,13 @@ color: gray-light
 <mdi-arrow-right-circle /> A  **automated, auditable, user-friendly**  PKI system is needed.
 
 ---
+layout: section
+color: cyan-light
+---
+
+# From OpenCA to OpenXPKI
+
+---
 layout: top-title
 color: gray-light
 ---
@@ -166,6 +173,13 @@ color: gray-light
 **Authentication Methods：**
 - <mdi-check /> LDAP(IHEP SSO) Username/Password
 - <mdi-check /> Client Certificate Login
+
+---
+layout: section
+color: cyan-light
+---
+
+# Certificate Workflow
 
 ---
 layout: top-title
@@ -301,6 +315,13 @@ color: gray-light
 <mdi-check-circle /> No manual polling needed — system proactively pushes status updates。
 
 ---
+layout: section
+color: cyan-light
+---
+
+# System Architecture
+
+---
 layout: top-title
 color: gray-light
 ---
@@ -329,138 +350,156 @@ graph TB
 
 
 ---
+layout: section
+color: cyan-light
+---
+
+# Migration Plan & Hands-on Training
+
+---
 layout: top-title
 color: gray-light
 ---
 
 :: title ::
-# Migration Plan & Recommendations
+# Migration Plan & Timeline
 
 :: content ::
-<mdi-map-marker-path /> Key steps before production launch。
+<mdi-map-marker-path /> We are currently in the process of obtaining official accreditation.
 
-**Pre-Launch Checklist：**
+**Current Status:**
+- The system has been formally presented at the **IGTF** meeting
+- Undergoing approval by **APGridPMA**
+- The CA website is currently accessible within the IHEP intranet (`gridca.ihep.ac.cn`)
+- Once approved, we will send email notifications to all users
 
-| Item | Status | Notes |
-|---|---|---|
-| Replace placeholder URLs | ⚠️ | Clean up placeholder domains in config |
-| Production domain + cert chain | ⚠️ | gridca.ihep.ac.cn |
-| User Migration | 📋 | Import old certs or re-request |
-| RA Training | 📋 | Approval workflow + CRL operations |
-| Monitoring Deployment | 📋 | Service status + certificate expiry alerts |
-
-**Recommended User Guidelines：**
-- Prefer using `ihepca` WebUI for operations
-- Retrieve private key container securely after issuance
-- Verify CRL is published after revocation
-
+**Migration Timeline:**
+- Plan to run old and new systems **in parallel until end of 2026**
+- Formal migration notice will be sent after APGridPMA approval
+- Any changes to the timeline will be communicated via email
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — Dashboard After Login
 
-<mdi-monitor-screenshot /> Dashboard view after logging in via IHEP SSO (LDAP username/password)。
+:: content ::
+<mdi-monitor-screenshot /> Dashboard view after logging in via IHEP SSO (LDAP username/password).
 
 ![](/pki-screenshot-6.png)
 
-**Navigation：** Home · Request · Information · Cert Search · CRL Download
+**Navigation:** Home · Request · Information · Cert Search · CRL Download
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — Request Certificate (Select Profile)
 
-<mdi-form-select /> Go to Request → Select Certificate Profile。
+:: content ::
+<mdi-form-select /> Go to Request → Select Certificate Profile.
 
 ![](/pki-screenshot-3.png)
 
-**Available Profiles：** IHEP User Certificate · IHEP Host Certificate
+**Available Profiles:** IHEP User Certificate · IHEP Host Certificate
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — Fill in Certificate Subject
 
-<mdi-account-edit /> System auto-fills identity fields (name, short account, email)。
+:: content ::
+<mdi-account-edit /> System auto-fills identity fields (name, short account, email).
 
 ![](/pki-screenshot-4.png)
 
-User only needs to add organization/group and notes, then confirm to enter approval。
+User only needs to add organization/group and notes, then confirm to enter approval.
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — Key Password
 
-<mdi-key-variant /> After server-side key generation, the system displays the key protection password。
+:: content ::
+<mdi-key-variant /> After server-side key generation, the system displays the key protection password.
 
 ![](/pki-screenshot-5.png)
 
-<mdi-alert-circle /> **IMPORTANT: ** Note the password — needed for PKCS#12 download later。
+<mdi-alert-circle /> **IMPORTANT:** Note the password — needed for PKCS#12 download later.
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — Review Before Submission
 
-<mdi-clipboard-check /> Final confirmation of certificate request details。
+:: content ::
+<mdi-clipboard-check /> Final confirmation of certificate request details.
 
 ![](/pki-screenshot-1.png)
 
-Submit after confirmation; wait for RA online approval。
+Submit after confirmation; wait for RA online approval.
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — Edit Certificate Info
 
-<mdi-pencil /> RA Operator or User can edit/supplement certificate info in workflow。
+:: content ::
+<mdi-pencil /> RA Operator or User can edit/supplement certificate info in workflow.
 
 ![](/pki-screenshot-2.png)
 
-Supports modifying Subject DN, SAN, Purpose etc. (requires permission)。
+Supports modifying Subject DN, SAN, Purpose etc. (requires permission).
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — Download & Deployment
 
-<mdi-tray-arrow-down /> After approval, download from "My Certificates"。
+:: content ::
+<mdi-tray-arrow-down /> After approval, download from "My Certificates".
 
-**Download Contents：**
+**Download Contents:**
 - Issued end-entity certificate (PEM)
 - Private Key Container (PKCS#12 / PKCS#8)
 - CA Certificate Chain
-- Latest CRL (from  `/download/` Directory）
+- Latest CRL (from `/download/` Directory)
 
-**Deployment Recommendations：**
+**Deployment Recommendations:**
 - User cert → Import to browser/mail client
 - Host cert → Deploy to `/etc/grid-security/`
 - Key file permissions: `chmod 400` or `600`
 
 ---
-layout: default
+layout: top-title
 color: gray-light
 ---
 
+:: title ::
 # Hands-on Training — FAQ
 
-<mdi-help-circle /> Common questions about the new system。
+:: content ::
+<mdi-help-circle /> Common questions about the new system.
 
 | Question | Answer |
 |---|---|
