@@ -14,14 +14,14 @@ titleTemplate: '%s - Xiao Han'
 
 ### The Upgrade of IHEP Grid Certification Authority
 
-<mdi-certificate /> OpenXPKI · Certificate Lifecycle Automation
+#### <mdi-certificate /> OpenXPKI · Certificate Lifecycle Automation
 
 
-**Xiao Han · IHEP Computing Center** <a href="mailto:hanx@ihep.ac.cn"><Email v="hanx@ihep.ac.cn" /></a>
-May 30th 2026
+**Xiao Han · on behalf of IHEP Computing Center** 
+<a href="mailto:hanx@ihep.ac.cn"></a><Email v="hanx@ihep.ac.cn" />
 
-<a href="https://indico.ihep.ac.cn/event/28920" class="ns-c-iconlink"><mdi-open-in-new />8th Workshop of Belle II China Group, Dalian</a>
-
+May 30th 2026, Dalian, 
+<a href="https://indico.ihep.ac.cn/event/28920" class="ns-c-iconlink"><mdi-open-in-new />8th Workshop of Belle II China Group</a>, 
 <a href="https://github.com/hanx-hep/27th-junocm-dci" class="ns-c-iconlink"><mdi-open-in-new />GitHub Repository</a>
 
 
@@ -62,16 +62,16 @@ color: gray-light
 # Background & Pain Points — Problems with the Old System
 
 :: content ::
-<mdi-alert-circle /> The old system `cagrid.ihep.ac.cn`，the issuance workflow relied on manual offline operations。
+<mdi-alert-circle /> The current PKI system cagrid.ihep.ac.cn is outdated.
 
 **Key Issues of the Old System：**
 
 | Pain Point | Impact |
 |---|---|
+| Root CA — 1024-bit | Insecure for production use |
 | Manual Offline Issuance | Admin must SSH into server to intervene — low efficiency |
 | OpenCA — Unmaintained | Outdated framework, community abandoned for years |
 | Manual CRL Publishing | Manual generation/push after revocation — severe delays |
-| Root CA — 1024-bit | Insecure for production use |
 
 <br>
 
@@ -79,7 +79,7 @@ color: gray-light
 
 ---
 layout: section
-color: cyan-light
+color: red-light
 ---
 
 # From OpenCA to OpenXPKI
@@ -176,7 +176,7 @@ color: gray-light
 
 ---
 layout: section
-color: cyan-light
+color: green-light
 ---
 
 # Certificate Workflow
@@ -192,6 +192,8 @@ color: gray-light
 :: content ::
 <mdi-account-key /> Regular users request via  `User Certificate`  profile。
 
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
 ```mermaid {scale: 0.65}
 sequenceDiagram
     User->>WebUI: Select User Certificate
@@ -202,6 +204,7 @@ sequenceDiagram
     OpenXPKI-->>User: Notify for Download
     User->>WebUI: Download Cert + PKCS#12
 ```
+</div>
 
 **Certificate Features：** Server-side key generation · RSA 4096 · clientAuth + emailProtection
 
@@ -218,6 +221,8 @@ color: gray-light
 :: content ::
 <mdi-server />  via  `Host Certificate`  profile。
 
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
 ```mermaid {scale: 0.65}
 sequenceDiagram
     Admin->>WebUI: Select Host Certificate
@@ -229,6 +234,7 @@ sequenceDiagram
     OpenXPKI-->>Admin: Notify for Download
     Admin->>WebUI: Download cert + deploy to server
 ```
+</div>
 
 **Differences from User Certificates：** Subject is FQDN · serverAuth Purpose
 
@@ -245,6 +251,10 @@ color: gray-light
 
 **Workflow States：**
 
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
 ```mermaid {scale: 0.55}
 graph LR
     A[Submitted] --> B[Pending Approval]
@@ -254,6 +264,7 @@ graph LR
     D --> F{Revocation Request}
     F --> G[Revoked]
 ```
+</div>
 
 **Regular users can do in WebUI：**
 - Submit new requests · View status · Download certs & keys
@@ -279,6 +290,10 @@ color: gray-light
 
 **Publishing Flow：**
 
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
 ```mermaid {scale: 0.6}
 graph LR
     A[Certificate Revoked] --> B[crl_issuance]
@@ -287,6 +302,7 @@ graph LR
     D --> E[Copy to download directory]
     E --> F[Relying Parties Download & Verify]
 ```
+</div>
 
 <mdi-alert /> **IMPORTANT:** Do not rely on WebUI alone — verify new CRL is published to download directory。
 
@@ -316,7 +332,7 @@ color: gray-light
 
 ---
 layout: section
-color: cyan-light
+color: purple-light
 ---
 
 # System Architecture
@@ -332,8 +348,10 @@ color: gray-light
 :: content ::
 <mdi-graph /> Understanding OpenXPKI Architecture from the User Perspective。
 
-```mermaid {scale: 0.5}
-graph TB
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+```mermaid {scale: 0.6}
+graph LR
     User[User] -->|HTTPS| WebUI[WebUI :8443]
     User -->|EST/SCEP| API[Automation Interface]
     WebUI --> Client[OpenXPKI Client]
@@ -345,13 +363,14 @@ graph TB
     Server --> Download[/download/]
     Download --> RP[Relying Party]
 ```
+</div>
 
 **Component Layers:** User → Access → Business Logic → Data → Publishing
 
 
 ---
 layout: section
-color: cyan-light
+color: orange-light
 ---
 
 # Migration Plan & Hands-on Training
@@ -367,31 +386,29 @@ color: gray-light
 :: content ::
 <mdi-map-marker-path /> We are currently in the process of obtaining official accreditation.
 
-**Current Status:**
-- The system has been formally presented at the **IGTF** meeting
-- Undergoing approval by **APGridPMA**
-- The CA website is currently accessible within the IHEP intranet (`gridca.ihep.ac.cn`)
-- Once approved, we will send email notifications to all users
+**Now:** Old CA `cagrid.ihep.ac.cn` is running. New CA presented at **IGTF**, under **APGridPMA** review.
 
-**Migration Timeline:**
-- Plan to run old and new systems **in parallel until end of 2026**
-- Formal migration notice will be sent after APGridPMA approval
-- Any changes to the timeline will be communicated via email
+<br>
 
----
-layout: top-title
-color: gray-light
----
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
 
-:: title ::
-# Hands-on Training — Dashboard After Login
+```mermaid {scale: 0.6}
+timeline
+    title Migration Timeline
+    Now : Old CA running
+        : New CA under review
+    Approval : Email all users
+            : New CA opens
+    Parallel : Old CA (revoke only)
+            : New CA (full service)
+    End of 2026 : Old CA shut down
+               : Old certs unrecognized
+```
 
-:: content ::
-<mdi-monitor-screenshot /> Dashboard view after logging in via IHEP SSO (LDAP username/password).
+</div>
 
-![](/pki-screenshot-6.png)
+<mdi-alert /> After end of 2026, certificates issued by the old CA will **no longer be recognized**.
 
-**Navigation:** Home · Request · Information · Cert Search · CRL Download
 
 ---
 layout: top-title
@@ -399,14 +416,20 @@ color: gray-light
 ---
 
 :: title ::
-# Hands-on Training — Request Certificate (Select Profile)
+# Hands-on Training — Login Page
 
 :: content ::
-<mdi-form-select /> Go to Request → Select Certificate Profile.
+<mdi-login /> Select **IHEP SSO** from the authentication method dropdown, then enter LDAP credentials.
 
-![](/pki-screenshot-3.png)
+<br>
 
-**Available Profiles:** IHEP User Certificate · IHEP Host Certificate
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/1.login_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
 
 ---
 layout: top-title
@@ -414,14 +437,104 @@ color: gray-light
 ---
 
 :: title ::
-# Hands-on Training — Fill in Certificate Subject
+# Hands-on Training — Home Dashboard
 
 :: content ::
-<mdi-account-edit /> System auto-fills identity fields (name, short account, email).
+<mdi-home /> After login, you see the main dashboard with Workflows, Certificates, and quick actions.
 
-![](/pki-screenshot-4.png)
+<br>
 
-User only needs to add organization/group and notes, then confirm to enter approval.
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/2.home_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# Hands-on Training — Select Certificate Profile
+
+:: content ::
+<mdi-form-select /> Go to **Request** -> choose **IHEP User Certificate** or **IHEP Host Certificate**.
+
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/3.profile_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# Hands-on Training — Edit Subject
+
+:: content ::
+<mdi-account-edit /> System auto-fills identity fields. Confirm the subject DN and add organization/group info.
+
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/4.edit_subject_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# Hands-on Training — Certificate Info
+
+:: content ::
+<mdi-information /> Additional certificate metadata: validity period, key algorithm (RSA 4096), and intended usage.
+
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/5.cert_info_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# Hands-on Training — Review & Submit
+
+:: content ::
+<mdi-clipboard-check /> Final confirmation of all fields before submission. Review carefully, then submit.
+
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/6.review_and_submit_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
 
 ---
 layout: top-title
@@ -432,26 +545,17 @@ color: gray-light
 # Hands-on Training — Key Password
 
 :: content ::
-<mdi-key-variant /> After server-side key generation, the system displays the key protection password.
+<mdi-key-variant /> Server generates a password for private key. **Write it down** - needed later for PKCS#12 export.
 
-![](/pki-screenshot-5.png)
+<br>
 
-<mdi-alert-circle /> **IMPORTANT:** Note the password — needed for PKCS#12 download later.
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
 
----
-layout: top-title
-color: gray-light
----
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/7.passwd_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
 
-:: title ::
-# Hands-on Training — Review Before Submission
-
-:: content ::
-<mdi-clipboard-check /> Final confirmation of certificate request details.
-
-![](/pki-screenshot-1.png)
-
-Submit after confirmation; wait for RA online approval.
+</div>
 
 ---
 layout: top-title
@@ -459,14 +563,20 @@ color: gray-light
 ---
 
 :: title ::
-# Hands-on Training — Edit Certificate Info
+# Hands-on Training — Awaiting Approval
 
 :: content ::
-<mdi-pencil /> RA Operator or User can edit/supplement certificate info in workflow.
+<mdi-clock-outline /> The request enters the RA workflow queue. You can track status in **My Workflows**.
 
-![](/pki-screenshot-2.png)
+<br>
 
-Supports modifying Subject DN, SAN, Purpose etc. (requires permission).
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/8.wait_approval.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
 
 ---
 layout: top-title
@@ -474,21 +584,20 @@ color: gray-light
 ---
 
 :: title ::
-# Hands-on Training — Download & Deployment
+# Hands-on Training — Certificate Issued
 
 :: content ::
-<mdi-tray-arrow-down /> After approval, download from "My Certificates".
+<mdi-certificate /> After RA approval, the certificate is issued. You can now download it from **My Certificates**.
 
-**Download Contents:**
-- Issued end-entity certificate (PEM)
-- Private Key Container (PKCS#12 / PKCS#8)
-- CA Certificate Chain
-- Latest CRL (from `/download/` Directory)
+<br>
 
-**Deployment Recommendations:**
-- User cert → Import to browser/mail client
-- Host cert → Deploy to `/etc/grid-security/`
-- Key file permissions: `chmod 400` or `600`
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/9.cert_issued.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
 
 ---
 layout: top-title
@@ -496,19 +605,62 @@ color: gray-light
 ---
 
 :: title ::
-# Hands-on Training — FAQ
+# Hands-on Training — Download Certificate
 
 :: content ::
-<mdi-help-circle /> Common questions about the new system.
+<mdi-tray-arrow-down /> Download options include certificate file, PKCS#12 container, and CA certificate chain.
 
-| Question | Answer |
-|---|---|
-| Login Failed | Ensure IHEP SSO is selected, use LDAP credentials |
-| Certificate Not Showing | Check Workflow status — may still be in approval |
-| Cannot Download Private Key | Key can only be downloaded once after issuance |
-| Certificate Expiring | System sends auto alerts — renew in advance |
-| CRL Not Updated | Contact RA Operator to trigger `crl_issuance` |
-| Browser Shows Insecure | Production cert chain pending deployment |
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/10.cert_download.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# Hands-on Training — Set Export Password
+
+:: content ::
+<mdi-lock /> Set a password to protect the PKCS#12 export file before downloading.
+
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/11.set_export_passwd.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# Hands-on Training — Download Complete
+
+:: content ::
+<mdi-check-circle /> The certificate and private key have been successfully exported. Proceed to deploy.
+
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/12.final_downloaded.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+</div>
+
+</div>
 
 ---
 layout: credits
