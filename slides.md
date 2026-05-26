@@ -709,9 +709,6 @@ color: gray-light
 | **New Platform** | OpenXPKI — enterprise-grade, workflow-driven, multi-protocol |
 | **Architecture** | Layered: WebUI/API → OpenXPKI Core → MariaDB + LDAP → Publishing |
 | **User Experience** | Modern WebUI with IHEP SSO, automated email notifications |
-| **Certificate Flow** | Request → RA Online Approval → Auto-issue → Download (PKCS#12 etc.) |
-| **Automation** | EST / SCEP / RPC API for bulk and programmatic access |
-| **CRL** | Auto-signing + auto-publishing, 14-day validity, no manual intervention |
 | **Migration** | Under IGTF/APGridPMA review, parallel run, old CA sunset by end of 2026 |
 
 <mdi-rocket-launch /> Target: a fully automated, auditable, and user-friendly PKI for the IHEP community.
@@ -721,22 +718,56 @@ layout: credits
 color: navy
 ---
 
-# Thank You
+<div class="grid text-size-4 grid-cols-3 w-3/4 gap-y-10 auto-rows-min ml-auto mr-auto">
+    <div class="grid-item text-center mr-0- col-span-3">
+        <strong><mdi-certificate-outline /> IHEP Computing Center — PKI Team</strong><br> 
+    </div>
+    <div class="grid-item text-right mr-4 col-span-1">
+        <strong>Reporter</strong>
+    </div>
+    <div class="grid-item col-span-2">
+        Xiao Han        <i>IHEP, CC</i><br/>
+    </div>
+    <div class="grid-item text-right mr-4 col-span-1">
+         <strong>Current Developers</strong>
+    </div>
+    <div class="grid-item col-span-2">
+        Xiao Han        <i>IHEP, CC</i><br/>
+    </div>
+    <div class="grid-item text-right mr-4 col-span-1">
+        <strong>People</strong>
+    </div>
+    <div class="grid-item col-span-2">
+        Gongxing SUN                      <i>RA Administrator</i><br/>
+        Tian YAN                        <i>Legacy CA Administrator</i><br/>
+        Xiao HAN                        <i>New CA Administrator</i><br/>
+    </div>
+    <div class="grid-item text-right mr-4 col-span-1">
+        <strong>Acknowledgements</strong>
+    </div>
+    <div class="grid-item col-span-2">
+        IGTF — The Interoperable Global Trust Federation<br/>
+        APGridPMA — The Asia Pacific Grid Policy Management Authority<br/>
+        APGridPMA Chair · Eisaku SAKANE<br/>
+        APGridPMA Former Chair · Eric YEN<br/>
+        EUGridPMA — The European Policy Management Authority for Grid Authentication<br/>
+    </div>
+</div>
 
-<mdi-certificate-outline /> IHEP Computing Center — PKI Team
 
-**Personnel**
+<mdi-web /> [gridca.ihep.ac.cn](https://gridca.ihep.ac.cn)
 
-RA Administrator · **Gongxing SUN**
-Legacy CA Administrator · **Tian YAN**
-New CA Developer · **Xiao HAN**
 
-**Acknowledgements**
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-IGTF — The Interoperable Global Trust Federation
-EUGridPMA — The European Policy Management Authority for Grid Authentication
-APGridPMA — The Asia Pacific Grid Policy Management Authority
-APGridPMA Chair · **Eisaku SAKANE**
-APGridPMA Former Chair · **Eric YEN**
-
-<mdi-web /> `gridca.ihep.ac.cn`
+<div class="grid-item col-span-3 text-center mt-180px mb-auto font-size-1.5rem">
+    <strong>Questions?</strong>
+</div>
+<div class="grid-item text-center col-span-3 mt-180px mb-auto font-size-2rem">
+    Thank you!
+</div>
