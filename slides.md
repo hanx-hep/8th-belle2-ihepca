@@ -394,11 +394,9 @@ color: gray-light
 
 **Now:** Old CA `cagrid.ihep.ac.cn` is running. New CA presented at **IGTF**, under **APGridPMA** review.
 
-<br>
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
-
-```mermaid {scale: 0.6}
+```mermaid {scale: 0.5}
 timeline
     title Migration Timeline
     Now : Old CA running
@@ -467,7 +465,7 @@ color: gray-light
 # Hands-on Training — Select Certificate Profile
 
 :: content ::
-<mdi-form-select /> Go to **Request** -> choose **IHEP User Certificate** or **IHEP Host Certificate**.
+<mdi-form-select /> Go to **Request** -> choose **User Certificate** or **Host Certificate**.
 
 <br>
 
@@ -509,7 +507,7 @@ color: gray-light
 # Hands-on Training — Certificate Info
 
 :: content ::
-<mdi-information /> Fill in additional request details such as application reason, comments, and organization information before submission.
+<mdi-information /> Fill in additional request details such as application reason(comments) before submission.
 
 <br>
 
