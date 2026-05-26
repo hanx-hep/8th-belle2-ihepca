@@ -42,15 +42,17 @@ align: cm-lm
 
 :: content ::
 
-- **Background & Pain Points** — Old System Issues
+- **Background**
 - **From OpenCA to OpenXPKI**
-    - **New System Overview** — OpenXPKI Architecture
-- **System Architecture** — Components & Flow
-    - **Old vs New Comparison** — Key Changes at a Glance
-    - **User Entry Points** — WebUI / API / Download
-    - **Certificate Workflow** — Request → Approve → Issue
-    - **CRL & Publishing** — Revocation & Relying Parties
-- **Migration Plan** — Next Steps
+    - *New System Overview*
+- **System Architecture**
+    - *Old vs New Comparison*
+    - *User Entry Points*
+    - *Certificate Workflow*
+    - *CRL & Publishing*
+- **Migration Plan**
+- **Hands-on Training**
+- **Summary**
 
 ---
 layout: section
@@ -87,7 +89,7 @@ layout: section
 color: red-light
 ---
 
-# From <span style="color:#888;font-size:0.7em;vertical-align:middle;">🔐 OpenCA</span> → <img src="/openxpki-logo.png" style="height:1.2em;vertical-align:middle;margin:0 4px;" /> OpenXPKI
+# From **OpenCA** to **OpenXPKI**
 
 ---
 layout: top-title
@@ -134,7 +136,7 @@ color: gray-light
 
 ```mermaid {scale: 0.6}
 graph LR
-    User[User] -->|HTTPS| WebUI[WebUI :8443]
+    User[User] -->|HTTPS| WebUI[WebUI]
     User -->|EST/SCEP| API[Automation Interface]
     WebUI --> Client[OpenXPKI Client]
     API --> Client
@@ -142,7 +144,7 @@ graph LR
     Server --> DB[(MariaDB)]
     Server --> LDAP[LDAP Auth]
     Server --> Mail[Email Notification]
-    Server --> Download[/download/]
+    Server --> Download[download]
     Download --> RP[Relying Party]
 ```
 </div>
@@ -379,7 +381,7 @@ layout: section
 color: orange-light
 ---
 
-# Migration Plan & Hands-on Training
+# Migration Plan
 
 ---
 layout: top-title
@@ -412,6 +414,13 @@ timeline
 </div>
 
 <mdi-alert /> After end of 2026, certificates issued by the old CA will **no longer be recognized**.
+
+---
+layout: section
+color: orange-light
+---
+
+# Hands-on Training
 
 
 ---
