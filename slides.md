@@ -20,7 +20,7 @@ titleTemplate: '%s - Xiao Han'
 **Xiao Han · on behalf of IHEP Computing Center** 
 <a href="mailto:hanx@ihep.ac.cn"></a><Email v="hanx@ihep.ac.cn" />
 
-May 30th 2026, Dalian, 
+May 31st 2026, Dalian, 
 <a href="https://indico.ihep.ac.cn/event/28920" class="ns-c-iconlink"><mdi-open-in-new />8th Workshop of Belle II China Group</a>, 
 <a href="https://github.com/hanx-hep/27th-junocm-dci" class="ns-c-iconlink"><mdi-open-in-new />GitHub Repository</a>
 
@@ -39,12 +39,12 @@ align: cm-lm
 :: content ::
 
 - **Background & Pain Points** — Old System Issues
-- **Old vs New Comparison** — Key Changes at a Glance
 - **New System Overview** — OpenXPKI Architecture
+- **System Architecture** — Components & Flow
+- **Old vs New Comparison** — Key Changes at a Glance
 - **User Entry Points** — WebUI / API / Download
 - **Certificate Workflow** — Request → Approve → Issue
 - **CRL & Publishing** — Revocation & Relying Parties
-- **System Architecture** — Components & Flow
 - **Migration Plan** — Next Steps
 
 ---
@@ -69,7 +69,7 @@ color: gray-light
 | Pain Point | Impact |
 |---|---|
 | Root CA — 1024-bit | Insecure for production use |
-| Manual Offline Issuance | Admin must SSH into server to intervene — low efficiency |
+| Manual Offline Issuance | Admin must physically enter an isolated room to operate an air-gapped host — no remote access |
 | OpenCA — Unmaintained | Outdated framework, community abandoned for years |
 | Manual CRL Publishing | Manual generation/push after revocation — severe delays |
 
@@ -106,6 +106,44 @@ color: gray-light
 - Multiple auth methods: LDAP / Client Cert / Local Account
 
 ---
+layout: section
+color: purple-light
+---
+
+# System Architecture
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# System Architecture
+
+:: content ::
+<mdi-graph /> Understanding OpenXPKI Architecture from the User Perspective。
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+
+```mermaid {scale: 0.6}
+graph LR
+    User[User] -->|HTTPS| WebUI[WebUI :8443]
+    User -->|EST/SCEP| API[Automation Interface]
+    WebUI --> Client[OpenXPKI Client]
+    API --> Client
+    Client --> Server[OpenXPKI Server]
+    Server --> DB[(MariaDB)]
+    Server --> LDAP[LDAP Auth]
+    Server --> Mail[Email Notification]
+    Server --> Download[/download/]
+    Download --> RP[Relying Party]
+```
+</div>
+
+**Component Layers:** User → Access → Business Logic → Data → Publishing
+
+
+---
 layout: top-title
 color: gray-light
 ---
@@ -119,9 +157,9 @@ There are **five key dimensions** to compare between the old system and the new 
 |---|---|---|
 | Platform URL | cagrid.ihep.ac.cn | gridca.ihep.ac.cn |
 | User Entry Points | Basic WebUI | Modern WebUI + CLI + API |
-| Issuance Method | Manual offline | Workflow-driven, fully automated |
+| Issuance Method | Manual offline | Workflow-driven with RA review |
 | Approval Mechanism | Offline (email) | Online RA workflow approval |
-| CRL Publishing | Manual generation & push | Auto-signing + auto-publishing |
+
 | Automation Interface | None |EST / SCEP / RPC API |
 
 The RA mechanism is similar in both systems, but the old system used **Offline Approval**, while the new one uses **Online Workflow Approval**。
@@ -294,7 +332,7 @@ color: gray-light
 
 <div style="text-align: center; max-width: 85%; margin: 0 auto;">
 
-```mermaid {scale: 0.6}
+```mermaid {scale: 0.45}
 graph LR
     A[Certificate Revoked] --> B[crl_issuance]
     B --> C[Generate New CRL]
@@ -304,7 +342,7 @@ graph LR
 ```
 </div>
 
-<mdi-alert /> **IMPORTANT:** Do not rely on WebUI alone — verify new CRL is published to download directory。
+
 
 ---
 layout: top-title
@@ -329,44 +367,6 @@ color: gray-light
 | Certificate Expiring Soon | Certificate Holder |
 
 <mdi-check-circle /> No manual polling needed — system proactively pushes status updates。
-
----
-layout: section
-color: purple-light
----
-
-# System Architecture
-
----
-layout: top-title
-color: gray-light
----
-
-:: title ::
-# System Architecture
-
-:: content ::
-<mdi-graph /> Understanding OpenXPKI Architecture from the User Perspective。
-
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
-
-```mermaid {scale: 0.6}
-graph LR
-    User[User] -->|HTTPS| WebUI[WebUI :8443]
-    User -->|EST/SCEP| API[Automation Interface]
-    WebUI --> Client[OpenXPKI Client]
-    API --> Client
-    Client --> Server[OpenXPKI Server]
-    Server --> DB[(MariaDB)]
-    Server --> LDAP[LDAP Auth]
-    Server --> Mail[Email Notification]
-    Server --> Download[/download/]
-    Download --> RP[Relying Party]
-```
-</div>
-
-**Component Layers:** User → Access → Business Logic → Data → Publishing
-
 
 ---
 layout: section
