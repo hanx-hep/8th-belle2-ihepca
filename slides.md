@@ -76,7 +76,9 @@ color: gray-light
 - <mdi-function-variant /> **gBASF** (Belle II Analysis Software Framework) requires a valid grid certificate to access distributed data and submit analysis jobs
 - Without a working CA → no certificates → no grid access → no analysis workflow
 
-<mdi-information /> IHEP operates its own Grid CA to serve the Belle II China group and domestic collaborators。
+<AdmonitionType type='info' >
+IHEP operates its own Grid CA to serve the Belle II China group and domestic collaborators。
+</AdmonitionType>
 
 ---
 layout: section
@@ -93,7 +95,9 @@ color: gray-light
 # Background & Pain Points — Problems with the Old System
 
 :: content ::
-<mdi-alert-circle /> The current **P**ublic **K**ey **I**nfrastructure(PKI) system [cagrid.ihep.ac.cn](https://cagrid.ihep.ac.cn) is **outdated**.
+<AdmonitionType type='important' >
+The current **P**ublic **K**ey **I**nfrastructure(PKI) system [cagrid.ihep.ac.cn](https://cagrid.ihep.ac.cn) is **outdated**.
+</AdmonitionType>
 
 **Key Issues of the Old System：**
 
@@ -106,7 +110,9 @@ color: gray-light
 
 <br>
 
-<mdi-arrow-right-circle /> A  **automated, auditable, user-friendly**  PKI system is needed.
+<AdmonitionType type='note' >
+A  **automated, auditable, user-friendly**  PKI system is needed.
+</AdmonitionType>
 
 <br>
 
@@ -144,7 +150,9 @@ Established 2009, open-source (Apache 2.0), maintained by White Rabbit Security 
 - YAML-based configuration — auditable, version-controlled, Git-friendly
 - Multiple auth methods: LDAP · SAML · OAuth · Client Cert
 
-<mdi-information /> We deploy the `ihepca` realm within OpenXPKI to serve IHEP Grid CA operations。
+<AdmonitionType type='info' >
+We deploy the `ihepca` realm within OpenXPKI to serve IHEP Grid CA operations。
+</AdmonitionType>
 
 ---
 layout: section
@@ -227,7 +235,9 @@ color: gray-light
 - SCEP：`/scep/...`
 - RPC/API：OpenXPKI Client → Backend Workflow
 
-<mdi-information /> Regular users should primarily use WebUI，Automation Interfaces target bulk integration。
+<AdmonitionType type='info' >
+Regular users should primarily use WebUI，Automation Interfaces target bulk integration。
+</AdmonitionType>
 
 ---
 layout: top-title
@@ -406,7 +416,9 @@ color: gray-light
 | Revocation Pending Approval | RA Operator |
 | Certificate Expiring Soon | Certificate Holder |
 
-<mdi-check-circle /> No manual polling needed — system proactively pushes status updates。
+<AdmonitionType type='note' >
+No manual polling needed — system proactively pushes status updates。
+</AdmonitionType>
 
 ---
 layout: section
@@ -445,7 +457,9 @@ timeline
 
 </div>
 
-<mdi-alert /> After end of 2026, certificates issued by the old CA will **no longer be recognized**.
+<AdmonitionType type='important' >
+After end of 2026, certificates issued by the old CA will **no longer be recognized**.
+</AdmonitionType>
 
 ---
 layout: section
@@ -548,7 +562,9 @@ color: gray-light
 # Hands-on Training — Certificate Info
 
 :: content ::
-<mdi-information /> Fill in additional request details such as application reason(comments) before submission.
+<AdmonitionType type='info' >
+Fill in additional request details such as application reason(comments) before submission.
+</AdmonitionType>
 
 <br>
 
@@ -723,14 +739,18 @@ color: gray-light
 # Summary
 
 :: content ::
-<mdi-check-all /> The IHEP Grid CA upgrade addresses long-standing pain points with a modern, automated PKI.
+<AdmonitionType type='note' >
+The IHEP Grid CA upgrade addresses long-standing pain points with a modern, automated PKI.
+</AdmonitionType>
 
 - **From OpenCA to OpenXPKI** — 1024-bit to RSA 4096, abandoned framework to enterprise-grade PKI, actively maintained since 2009
 - **Fully Automated Certificate Lifecycle** — WebUI request → RA online approval → auto-issue → download in multiple formats
 - **Multi-Protocol & Auto CRL** — EST · SCEP · RPC API for programmatic access, auto-signing + auto-publishing CRLs, email notifications throughout
 - **Under Accreditation** — IGTF / APGridPMA review in progress, parallel run with old CA, sunset by end of 2026
 
-<mdi-rocket-launch /> Target: a fully automated, auditable, and user-friendly PKI for the IHEP community.
+<AdmonitionType type='note' >
+Target: a fully automated, auditable, and user-friendly PKI for the IHEP community.
+</AdmonitionType>
 
 ---
 layout: credits
