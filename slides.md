@@ -34,17 +34,18 @@ align: cm-lm
 
 :: title ::
 
-# Table of Contents
+# Outline
 
 :: content ::
 
 - **Background & Pain Points** — Old System Issues
-- **New System Overview** — OpenXPKI Architecture
+- **From OpenCA to OpenXPKI**
+    - **New System Overview** — OpenXPKI Architecture
 - **System Architecture** — Components & Flow
-- **Old vs New Comparison** — Key Changes at a Glance
-- **User Entry Points** — WebUI / API / Download
-- **Certificate Workflow** — Request → Approve → Issue
-- **CRL & Publishing** — Revocation & Relying Parties
+    - **Old vs New Comparison** — Key Changes at a Glance
+    - **User Entry Points** — WebUI / API / Download
+    - **Certificate Workflow** — Request → Approve → Issue
+    - **CRL & Publishing** — Revocation & Relying Parties
 - **Migration Plan** — Next Steps
 
 ---
@@ -62,15 +63,15 @@ color: gray-light
 # Background & Pain Points — Problems with the Old System
 
 :: content ::
-<mdi-alert-circle /> The current PKI system cagrid.ihep.ac.cn is outdated.
+<mdi-alert-circle /> The current **P**ublic **K**ey **I**nfrastructure(PKI) system [cagrid.ihep.ac.cn](https://cagrid.ihep.ac.cn) is **outdated**.
 
 **Key Issues of the Old System：**
 
 | Pain Point | Impact |
 |---|---|
-| Root CA — 1024-bit | Insecure for production use |
-| Manual Offline Issuance | Admin must physically enter an isolated room to operate an air-gapped host — no remote access |
-| OpenCA — Unmaintained | Outdated framework, community abandoned for years |
+| Root CA: 1024-bit | Insecure for production use |
+| Framework: OpenCA | Outdated, community abandoned for years |
+| Manual Offline Issuance | Admin must physically enter an isolated room to operate CA server |
 | Manual CRL Publishing | Manual generation/push after revocation — severe delays |
 
 <br>
@@ -103,7 +104,7 @@ color: gray-light
 - RA operators approve via online workflows
 - Auto-publish CA certificates and CRLs
 - Supports EST / SCEP / RPC API Automation Interface
-- Multiple auth methods: LDAP / Client Cert / Local Account
+- Multiple auth methods: LDAP / Client Cert
 
 ---
 layout: section
@@ -159,7 +160,6 @@ There are **five key dimensions** to compare between the old system and the new 
 | User Entry Points | Basic WebUI | Modern WebUI + CLI + API |
 | Issuance Method | Manual offline | Workflow-driven with RA review |
 | Approval Mechanism | Offline (email) | Online RA workflow approval |
-
 | Automation Interface | None |EST / SCEP / RPC API |
 
 The RA mechanism is similar in both systems, but the old system used **Offline Approval**, while the new one uses **Online Workflow Approval**。
@@ -176,7 +176,7 @@ color: gray-light
 <mdi-web /> Three main entry points for users：
 
 **WebUI (Primary Entry)：**
-- `https://gridca.ihep.ac.cn/webui/ihepca/`
+- [https://gridca.ihep.ac.cn/webui/ihepca/](https://gridca.ihep.ac.cn/webui/ihepca/)
 
 **Public Download Paths：**
 - CA Certificate：`/download/<CA_Name>.crt`
@@ -423,9 +423,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/1.login_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
