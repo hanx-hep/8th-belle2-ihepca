@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "slidev --host 0.0.0.0",
+    "build": "slidev build",
+    "export": "slidev export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
