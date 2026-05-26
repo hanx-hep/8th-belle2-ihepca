@@ -450,9 +450,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/2.home_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -471,9 +471,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/3.profile_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -492,9 +492,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/4.edit_subject_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -513,9 +513,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/5.cert_info_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -534,9 +534,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/6.review_and_submit_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -555,9 +555,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/7.passwd_page.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -576,9 +576,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/8.wait_approval.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -597,9 +597,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/9.cert_issued.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -618,9 +618,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/10.cert_download.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -639,9 +639,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/11.set_export_passwd.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
@@ -660,9 +660,9 @@ color: gray-light
 
 <br>
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
-<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+<div style="text-align: center; max-width: 90%; margin: 0 auto;">
   <img src="/12.final_downloaded.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
 </div>
 
