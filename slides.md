@@ -84,6 +84,13 @@ color: gray-light
 
 <mdi-arrow-right-circle /> A  **automated, auditable, user-friendly**  PKI system is needed.
 
+<br>
+
+<div style="text-align: center; max-width: 85%; margin: 0 auto;">
+  <img src="/cagrid_screenshot.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
+  <div style="font-size:0.8em;color:#888;margin-top:4px;"><mdi-web /> cagrid.ihep.ac.cn — current production CA web interface</div>
+</div>
+
 ---
 layout: section
 color: red-light
@@ -100,6 +107,7 @@ color: gray-light
 # New System Overview — OpenXPKI
 
 :: content ::
+<img src="/openxpki-logo.png" style="position:absolute;top:15px;right:25px;width:120px;opacity:0.85;z-index:1;" />
 <mdi-server-network /> **OpenXPKI** is an enterprise-grade PKI/Trustcenter software for X.509v3 certificate lifecycle management.
 Established 2009, open-source (Apache 2.0), maintained by White Rabbit Security GmbH.
 
@@ -417,7 +425,7 @@ timeline
 
 ---
 layout: section
-color: orange-light
+color: blue-light
 ---
 
 # Hands-on Training
@@ -676,6 +684,39 @@ color: gray-light
 </div>
 
 ---
+layout: section
+color: amber-light
+---
+
+# Summary
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# Summary — Key Takeaways
+
+:: content ::
+<mdi-check-all /> The IHEP Grid CA upgrade addresses long-standing pain points with a modern, automated PKI.
+
+**What We Covered：**
+
+| Area | Key Point |
+|---|---|
+| **Old System** | OpenCA-based, 1024-bit root, manual issuance, no automation |
+| **New Platform** | OpenXPKI — enterprise-grade, workflow-driven, multi-protocol |
+| **Architecture** | Layered: WebUI/API → OpenXPKI Core → MariaDB + LDAP → Publishing |
+| **User Experience** | Modern WebUI with IHEP SSO, automated email notifications |
+| **Certificate Flow** | Request → RA Online Approval → Auto-issue → Download (PKCS#12 etc.) |
+| **Automation** | EST / SCEP / RPC API for bulk and programmatic access |
+| **CRL** | Auto-signing + auto-publishing, 14-day validity, no manual intervention |
+| **Migration** | Under IGTF/APGridPMA review, parallel run, old CA sunset by end of 2026 |
+
+<mdi-rocket-launch /> Target: a fully automated, auditable, and user-friendly PKI for the IHEP community.
+
+---
 layout: credits
 color: navy
 ---
@@ -684,6 +725,18 @@ color: navy
 
 <mdi-certificate-outline /> IHEP Computing Center — PKI Team
 
-OpenXPKI · Docker Compose · Certificate Lifecycle Automation
+**Personnel**
+
+RA Administrator · **Gongxing SUN**
+Legacy CA Administrator · **Tian YAN**
+New CA Developer · **Xiao HAN**
+
+**Acknowledgements**
+
+IGTF — The Interoperable Global Trust Federation
+EUGridPMA — The European Policy Management Authority for Grid Authentication
+APGridPMA — The Asia Pacific Grid Policy Management Authority
+APGridPMA Chair · **Eisaku SAKANE**
+APGridPMA Former Chair · **Eric YEN**
 
 <mdi-web /> `gridca.ihep.ac.cn`
