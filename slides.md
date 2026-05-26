@@ -731,7 +731,7 @@ title: credits/people
         Xiao Han        <i>IHEP, CC</i><br/>
     </div>
     <div class="grid-item text-right mr-4 col-span-1">
-         <strong>Current Developers</strong>
+         <strong>Current Developer</strong>
     </div>
     <div class="grid-item col-span-2">
         Xiao Han        <i>IHEP, CC</i><br/>
@@ -740,9 +740,9 @@ title: credits/people
         <strong>People</strong>
     </div>
     <div class="grid-item col-span-2">
-        Gongxing SUN   ·     <i>RA Administrator</i><br/>
-        Tian YAN       ·    <i>Legacy CA Administrator</i><br/>
-        Xiao HAN       ·    <i>New CA Administrator</i><br/>
+        Gongxing SUN   ·    <i>RA Administrator</i><br/>
+        Tian YAN       ·    <i>CA Administrator (former)</i><br/>
+        Xiao HAN       ·    <i>CA Administrator</i><br/>
     </div>
     <div class="grid-item text-right mr-4 col-span-1">
         <strong>Acknowledgements</strong>
@@ -759,9 +759,6 @@ title: credits/people
     </div>
 </div>
 
-
-
-&nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
