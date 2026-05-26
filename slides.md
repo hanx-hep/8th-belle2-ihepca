@@ -716,6 +716,9 @@ color: gray-light
 ---
 layout: credits
 color: navy
+loop: true
+speed: 0.5
+title: credits/people
 ---
 
 <div class="grid text-size-4 grid-cols-3 w-3/4 gap-y-10 auto-rows-min ml-auto mr-auto">
@@ -742,6 +745,11 @@ color: navy
         Tian YAN                        <i>Legacy CA Administrator</i><br/>
         Xiao HAN                        <i>New CA Administrator</i><br/>
     </div>
+    <div class="grid-item col-span-3">
+        <i>RA Administrator</i><br/>
+        <i>Legacy CA Administrator</i><br/>
+        <i>New CA Administrator</i><br/>
+    </div>
     <div class="grid-item text-right mr-4 col-span-1">
         <strong>Acknowledgements</strong>
     </div>
@@ -752,10 +760,12 @@ color: navy
         APGridPMA Former Chair · Eric YEN<br/>
         EUGridPMA — The European Policy Management Authority for Grid Authentication<br/>
     </div>
+    <div class="grid-item text-center mr-0- col-span-3">
+        <strong><mdi-web /> [gridca.ihep.ac.cn](https://gridca.ihep.ac.cn)</strong><br/>
+    </div>
 </div>
 
 
-<mdi-web /> [gridca.ihep.ac.cn](https://gridca.ihep.ac.cn)
 
 
 &nbsp;
