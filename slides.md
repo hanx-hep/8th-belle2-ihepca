@@ -696,20 +696,15 @@ color: gray-light
 ---
 
 :: title ::
-# Summary — Key Takeaways
+# Summary
 
 :: content ::
 <mdi-check-all /> The IHEP Grid CA upgrade addresses long-standing pain points with a modern, automated PKI.
 
-**What We Covered：**
-
-| Area | Key Point |
-|---|---|
-| **Old System** | OpenCA-based, 1024-bit root, manual issuance, no automation |
-| **New Platform** | OpenXPKI — enterprise-grade, workflow-driven, multi-protocol |
-| **Architecture** | Layered: WebUI/API → OpenXPKI Core → MariaDB + LDAP → Publishing |
-| **User Experience** | Modern WebUI with IHEP SSO, automated email notifications |
-| **Migration** | Under IGTF/APGridPMA review, parallel run, old CA sunset by end of 2026 |
+- **From OpenCA to OpenXPKI** — 1024-bit to RSA 4096, abandoned framework to enterprise-grade PKI, actively maintained since 2009
+- **Fully Automated Certificate Lifecycle** — WebUI request → RA online approval → auto-issue → download in multiple formats
+- **Multi-Protocol & Auto CRL** — EST · SCEP · RPC API for programmatic access, auto-signing + auto-publishing CRLs, email notifications throughout
+- **Under Accreditation** — IGTF / APGridPMA review in progress, parallel run with old CA, sunset by end of 2026
 
 <mdi-rocket-launch /> Target: a fully automated, auditable, and user-friendly PKI for the IHEP community.
 
