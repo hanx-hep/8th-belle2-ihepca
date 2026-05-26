@@ -7,9 +7,13 @@ routerMode: hash
 lineNumbers: true
 neversink_string: "8th Workshop of Belle II China Group"
 # title of your slide, will inferred from the first header if not specified
-title: Upgrade of IHEP Grid Certification Authority
+title: The Upgrade of IHEP Grid Certification Authority
 # titleTemplate for the webpage, `%s` will be replaced by the slides deck's title
 titleTemplate: '%s - Xiao Han'
+# favicon, can be a local file path or URL
+favicon: /openxpki-favicon.png
+# global page transition
+transition: fade
 ---
 
 ### The Upgrade of IHEP Grid Certification Authority
@@ -83,7 +87,7 @@ layout: section
 color: red-light
 ---
 
-# From OpenCA to OpenXPKI
+# From <span style="color:#888;font-size:0.7em;vertical-align:middle;">🔐 OpenCA</span> → <img src="/openxpki-logo.png" style="height:1.2em;vertical-align:middle;margin:0 4px;" /> OpenXPKI
 
 ---
 layout: top-title
@@ -94,17 +98,19 @@ color: gray-light
 # New System Overview — OpenXPKI
 
 :: content ::
-<mdi-server-network /> Built on **OpenXPKI** stack。
+<mdi-server-network /> **OpenXPKI** is an enterprise-grade PKI/Trustcenter software for X.509v3 certificate lifecycle management.
+Established 2009, open-source (Apache 2.0), maintained by White Rabbit Security GmbH.
 
-**Primary realm：** `ihepca` — Serves regular users and RA operators, covering all certificate operations。
+**Key Characteristics：**
 
-**Core Capabilities：**
+- Workflow-driven certificate lifecycle — request, approval, issuance, revocation
+- Multi-protocol enrollment: EST · SCEP · ACME · SimpleCMC · REST API
+- Flexible crypto layer — HSM support via PKCS#11, OpenSSL backend
+- Multi-tenant PKI Realms with seamless CA rollover
+- YAML-based configuration — auditable, version-controlled, Git-friendly
+- Multiple auth methods: LDAP · SAML · OAuth · Client Cert
 
-- Submit certificate requests, renewals, and revocations via WebUI
-- RA operators approve via online workflows
-- Auto-publish CA certificates and CRLs
-- Supports EST / SCEP / RPC API Automation Interface
-- Multiple auth methods: LDAP / Client Cert
+<mdi-information /> We deploy the `ihepca` realm within OpenXPKI to serve IHEP Grid CA operations。
 
 ---
 layout: section
