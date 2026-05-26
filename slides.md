@@ -509,7 +509,7 @@ color: gray-light
 # Hands-on Training — Certificate Info
 
 :: content ::
-<mdi-information /> Additional certificate metadata: validity period, key algorithm (RSA 4096), and intended usage.
+<mdi-information /> Fill in additional request details such as application reason, comments, and organization information before submission.
 
 <br>
 
