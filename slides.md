@@ -42,6 +42,7 @@ align: cm-lm
 
 :: content ::
 
+- **What is a CA?**
 - **Background**
 - **From OpenCA to OpenXPKI**
     - *New System Overview*
@@ -53,6 +54,29 @@ align: cm-lm
 - **Migration Plan**
 - **Hands-on Training**
 - **Summary**
+
+---
+layout: top-title
+color: gray-light
+---
+
+:: title ::
+# What is a CA & Why Does Belle II Need It?
+
+:: content ::
+<mdi-certificate /> A **Certificate Authority (CA)** is a trusted entity that issues and manages X.509 digital certificates used to verify identities in networked environments.
+
+**In Grid Computing：**
+
+- Certificates are the foundation of **Grid authentication** — all grid services rely on X.509 certificates to identify users and hosts
+- Every Belle II member accessing computing resources must hold a valid grid certificate
+
+**Why It Matters for Belle II：**
+
+- <mdi-function-variant /> **gBASF** (Belle II Analysis Software Framework) requires a valid grid certificate to access distributed data and submit analysis jobs
+- Without a working CA → no certificates → no grid access → no analysis workflow
+
+<mdi-information /> IHEP operates its own Grid CA to serve the Belle II China group and domestic collaborators。
 
 ---
 layout: section
