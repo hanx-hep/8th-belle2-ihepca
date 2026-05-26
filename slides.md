@@ -716,8 +716,7 @@ color: gray-light
 ---
 layout: credits
 color: navy
-loop: true
-speed: 0.5
+speed: 0.3
 title: credits/people
 ---
 
@@ -741,30 +740,24 @@ title: credits/people
         <strong>People</strong>
     </div>
     <div class="grid-item col-span-2">
-        Gongxing SUN                      <i>RA Administrator</i><br/>
-        Tian YAN                        <i>Legacy CA Administrator</i><br/>
-        Xiao HAN                        <i>New CA Administrator</i><br/>
-    </div>
-    <div class="grid-item col-span-3">
-        <i>RA Administrator</i><br/>
-        <i>Legacy CA Administrator</i><br/>
-        <i>New CA Administrator</i><br/>
+        Gongxing SUN   ·     <i>RA Administrator</i><br/>
+        Tian YAN       ·    <i>Legacy CA Administrator</i><br/>
+        Xiao HAN       ·    <i>New CA Administrator</i><br/>
     </div>
     <div class="grid-item text-right mr-4 col-span-1">
         <strong>Acknowledgements</strong>
     </div>
     <div class="grid-item col-span-2">
-        IGTF — The Interoperable Global Trust Federation<br/>
-        APGridPMA — The Asia Pacific Grid Policy Management Authority<br/>
+        The Interoperable Global Trust Federation(IGTF)<br/>
+        The Asia Pacific Grid Policy Management Authority(APGridPMA)<br/>
         APGridPMA Chair · Eisaku SAKANE<br/>
         APGridPMA Former Chair · Eric YEN<br/>
-        EUGridPMA — The European Policy Management Authority for Grid Authentication<br/>
+        The European Policy Management Authority for Grid Authentication(EUGridPMA)<br/>
     </div>
     <div class="grid-item text-center mr-0- col-span-3">
-        <strong><mdi-web /> [gridca.ihep.ac.cn](https://gridca.ihep.ac.cn)</strong><br/>
+        <strong><mdi-web /> <a href="https://gridca.ihep.ac.cn/webui/ihepca/">gridca.ihep.ac.cn</a> </strong><br/>
     </div>
 </div>
-
 
 
 
