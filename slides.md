@@ -42,7 +42,6 @@ align: cm-lm
 
 :: content ::
 
-- **What is a CA?**
 - **Background**
 - **From OpenCA to OpenXPKI**
     - *New System Overview*
@@ -56,19 +55,26 @@ align: cm-lm
 - **Summary**
 
 ---
+layout: section
+color: cyan-light
+---
+
+# Background & Pain Points
+
+---
 layout: top-title
 color: gray-light
 ---
 
 :: title ::
-# What is a CA & Why Does Belle II Need It?
+# What is a CA & Why Does Belle II Analysis Need It?
 
 :: content ::
 <mdi-certificate /> A **Certificate Authority (CA)** is a trusted entity that issues and manages X.509 digital certificates used to verify identities in networked environments.
 
-**In Grid Computing：**
+**Belle II uses Grid Computing**
 
-- Certificates are the foundation of **Grid authentication** — all grid services rely on X.509 certificates to identify users and hosts
+- Certificates are the foundation of **Grid authentication** — all grid services rely on X.509 certificates to identify users and hosts. (Perhaps it will be replaced by tokens *in the future*.)
 - Every Belle II member accessing computing resources must hold a valid grid certificate
 
 **Why It Matters for Belle II：**
@@ -81,13 +87,6 @@ IHEP operates its own Grid CA to serve the Belle II China group and domestic col
 </AdmonitionType>
 
 ---
-layout: section
-color: cyan-light
----
-
-# Background & Pain Points
-
----
 layout: top-title
 color: gray-light
 ---
@@ -96,7 +95,7 @@ color: gray-light
 
 :: content ::
 <AdmonitionType type='important' >
-The current **P**ublic **K**ey **I**nfrastructure(PKI) system [cagrid.ihep.ac.cn](https://cagrid.ihep.ac.cn) is **outdated**.
+The current <b>P</b>ublic <b>K</b>ey <b>I</b>nfrastructure (PKI) system <a href="https://cagrid.ihep.ac.cn"></a> is <b>outdated</b>.
 </AdmonitionType>
 
 **Key Issues of the Old System：**
