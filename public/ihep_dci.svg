@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-label="IHEP DCI JUNO inspired distributed computing icon">
+  <defs>
+    <radialGradient id="sphereFill" cx="46%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#1F55B2"/>
+      <stop offset="100%" stop-color="#0F2F66"/>
+    </radialGradient>
+    <linearGradient id="orbitStroke" x1="170" y1="720" x2="850" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2F73E0"/>
+      <stop offset="100%" stop-color="#4B87EA"/>
+    </linearGradient>
+    <linearGradient id="networkStroke" x1="350" y1="610" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#63A2FF"/>
+      <stop offset="100%" stop-color="#63A2FF"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#061329" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Scaled up from the accepted version to reduce padding while keeping the full orbit visible -->
+  <g transform="translate(512 514) scale(1.25) translate(-512 -514)">
+    <circle cx="512" cy="514" r="282" fill="url(#sphereFill)" filter="url(#softShadow)"/>
+
+    <g fill="none" stroke="url(#networkStroke)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 367 553 L 433 419 L 615 370 L 623 664"/>
+      <path d="M 367 553 L 463 537 L 615 370"/>
+      <path d="M 433 419 L 623 664"/>
+      <path d="M 367 553 L 623 664"/>
+    </g>
+
+    <path d="M 230 608
+             C 137 711 184 775 318 729
+             C 456 681 572 615 648 562
+             C 720 512 786 452 827 381
+             C 863 302 823 247 713 283"
+          fill="none" stroke="url(#orbitStroke)" stroke-width="18" stroke-linecap="butt"/>
+
+    <g fill="#63A2FF">
+      <circle cx="433" cy="419" r="18"/>
+      <circle cx="615" cy="370" r="18"/>
+      <circle cx="367" cy="553" r="18"/>
+      <circle cx="463" cy="537" r="13"/>
+      <circle cx="623" cy="664" r="18"/>
+    </g>
+
+    <circle cx="675.418" cy="542.228" r="15" fill="#FA0101"/>
+  </g>
+</svg>

@@ -11,7 +11,7 @@ title: The Upgrade of IHEP Grid Certification Authority
 # titleTemplate for the webpage, `%s` will be replaced by the slides deck's title
 titleTemplate: '%s - Xiao Han'
 # favicon, can be a local file path or URL
-favicon: /openxpki-favicon.png
+favicon: /ihep_dci.svg
 # global page transition
 transition: fade
 ---
