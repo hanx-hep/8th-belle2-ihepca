@@ -63,7 +63,7 @@ layout: section
 color: cyan-light
 ---
 
-# Background & Pain Points
+# Background
 
 ---
 layout: top-title-two-cols
@@ -120,7 +120,7 @@ color: gray-light
 The current PKI system <a href="https://cagrid.ihep.ac.cn"><mdi-open-in-new />cagrid.ihep.ac.cn</a> is <b>outdated</b>.
 </AdmonitionType>
 <br>
-<div style="text-align: center; max-width: 95%; margin: 0 auto;">
+<div style="text-align: center; max-width: 100%; margin: 0 auto;">
   <img src="/cagrid_screenshot.png" style="width: 100%; border-radius: 12px; border: 1px solid #e5e7eb;" />
   <div style="font-size:0.8em;color:#888;margin-top:4px;"><mdi-web /> cagrid.ihep.ac.cn — current CA web interface</div>
 </div>
@@ -129,12 +129,10 @@ The current PKI system <a href="https://cagrid.ihep.ac.cn"><mdi-open-in-new />ca
 
 | **Key Issues** | **Impact** |
 |---|---|
-| Root CA Key 1024-bit  |  Insecure and outdated for WLCG |
-| Framework OpenCA | Outdated, community abandoned for years |
-| Issuance Manual Offline | Admin must physically enter an isolated room to issue CA |
-| Manual CRL Publishing | Manual generation/push after revocation — severe delays |
-
-<br>
+| Root CA Key **1024-bit**  |  Insecure and outdated for WLCG |
+| Framework **OpenCA** | Outdated, community abandoned for years |
+| Issuance Manual **Offline** | Admin must physically enter an isolated room to issue CA |
+| **Manual** CRL Publishing | Manual generation/push after revocation — severe delays |
 
 <AdmonitionType type='note' >
 An <b>automated, modernized</b> PKI system is needed.
@@ -168,7 +166,7 @@ Established 2009, open-source (Apache 2.0), maintained by White Rabbit Security 
 - YAML-based configuration — auditable, version-controlled, Git-friendly
 - Multiple auth methods: LDAP · SAML · OAuth · Client Cert
 
-<img src="/openxpki.svg" style="position:absolute;top:5px;right:15px;width:100px;opacity:1;z-index:1;" />
+<img src="/openxpki.svg" style="position:absolute;top:-65px;right:-15px;width:700px;opacity:0.2;z-index:-1;" />
 
 ---
 layout: section
