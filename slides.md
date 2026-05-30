@@ -451,13 +451,13 @@ color: gray-light
 :: content ::
 <mdi-map-marker-path /> We are currently in the process of obtaining official accreditation.
 
-**Now:** Old CA `cagrid.ihep.ac.cn` is running. New CA presented at **IGTF**, under **APGridPMA** review.
+**Now:** The old PKI is still running. The new PKI has been presented to **IGTF**, under review by **APGridPMA**, and is expected to enter production soon.
+
 
 <div style="text-align: center; max-width: 90%; margin: 0 auto;">
 
 ```mermaid {scale: 0.5}
 timeline
-    title Migration Timeline
     Now : Old CA running
         : New CA under review
     Approval : Email all users
@@ -471,7 +471,7 @@ timeline
 </div>
 
 <AdmonitionType type='warning' >
-After end of 2026, certificates issued by the old CA will <b>no longer be recognized</b>.
+After end of 2026, certificates issued by the old CA will <b>no longer be recognized</b>. This means that once the new PKI is in production, every user will need to request a new certificate within the next six months.
 </AdmonitionType>
 
 ---
@@ -711,7 +711,7 @@ color: gray-light
 # Hands-on Training — Set Export Password
 
 :: content ::
-<mdi-lock /> Set a password to protect the PKCS#12 export file before downloading.
+<mdi-lock /> Fill the password which you just wrote down in the request step.
 
 <br>
 <br>
@@ -768,11 +768,12 @@ The IHEP Grid CA upgrade addresses long-standing pain points with a modern, auto
 - **Automated Certificate Lifecycle** — WebUI request → RA online approval → auto-issue → download
 - **Multi-Protocol & Auto CRL** — EST · RPC API for programmatic access, auto-signing + auto-publishing CRLs, email notifications throughout
 - **Under Accreditation** — IGTF / APGridPMA review in progress, parallel run with old CA until end of 2026
+- **A Short Training** — More detailed user manuals will be sent with the email when the new CA is in production.
 
 ---
 layout: credits
 color: navy
-speed: 0.35
+speed: 0.5
 title: credits/people
 ---
 
